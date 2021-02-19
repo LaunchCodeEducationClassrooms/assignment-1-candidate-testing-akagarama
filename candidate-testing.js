@@ -21,28 +21,34 @@ candidateName = input.question("What is your name? ");
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
-  for (let i = 0; i < questions.length; i++) {
-candidateAnswers = input.question(questions[i]);
-}
-return correctAnswers;
+ for (let i = 0; i < questions.length; i++) {
+candidateAnswers [i] = input.question(`${i+1}) ${questions[i]}`);
+console.log(gradeQuiz(candidateAnswers));
+console.log("\n");
+ }
 }
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (correctAnswer === ["Sally Ride", "true", "40", "Trajectory", "3"]) {
-  console.log("Correct answer!")
-} else {
-  console.log("Incorrect answers.")
-}
-return correctAnswers;
 
-  let grade = [];
+for (let i = 0; i < candidateAnswers.length; i++) {
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+    console.log(`correct`);
+  } else {
+    console.log(`That is incorrect`);
+  }
+} 
 
-  let numberOfCorrectAnswers = 5;
-  let numberofQuizQuestion = 5;
-  let candidatePercentage = (numberOfCorrectAnswers / numberofQuizQuestion) * 100;
-  let totalGrad = 0;
-  totalGrad++;
+  let grade = 0;
+  let finalGrade =0
+
+  for (i = 0; i < candidateAnswers.length; i++) {
+    if (candidateAnswers[i] === correctAnswers[i]) {
+    grade++;
+    finalGrade = (grade/5) * 100;
+    console.log(`Overall Grade: ${finalGrade} % (${grade} of 5 responses correct)`);
+  }
+  }
 
   return grade;
 }
@@ -50,7 +56,7 @@ return correctAnswers;
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log("Hello, " + candidateName +"!");
+  console.log(`Hello, ${candidateName}!`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
