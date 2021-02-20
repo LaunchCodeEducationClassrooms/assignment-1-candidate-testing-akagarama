@@ -15,7 +15,7 @@ let candidateAnswers = [];
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question("What is your name?: ");
-}
+};
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
@@ -24,7 +24,7 @@ function askQuestion() {
 candidateAnswers.push(input.question(questions[i]));
 console.log(`Your answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
  }
-}
+};
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -44,7 +44,7 @@ for (let i = 0; i < correctAnswers.length; i++) {
   } 
   console.log(`>>> Overall Grade: ${grade}% (${totalGrade} of ${questions.length} responses correct) <<<\n>>> Status: ${candidateStatus} <<<`);
   return grade;  
-}
+};
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
@@ -64,4 +64,4 @@ module.exports = {
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
-}
+};
