@@ -48,7 +48,7 @@ for (let i = 0; i < correctAnswers.length; i++) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log(`Hello: ${candidateName}!`);
+  console.log(`\nCandidate Name: ${candidateName}`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 };
