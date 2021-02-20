@@ -53,10 +53,11 @@ for (let i = 0; i < correctAnswers.length; i++) {
   } else {
     candidateStatus = "FAILED";
   }
+ 
+  console.log(`>>> Overall Grade: ${grade}% (${totalGrade} of ${questions.length} responses correct) <<<\n>>> Status: ${candidateStatus} <<<`)
 
-  console.log(`>>> Overall Grade: ${grade}% (${totalGrade} of ${questions.length} responses correct) <<<\n>>> Status: ${candidateStatus} <<<`);
-  
   return grade;
+  
 }
 
 function runProgram() {
@@ -66,7 +67,6 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
-
 
 
 // Don't write any code below this line //
